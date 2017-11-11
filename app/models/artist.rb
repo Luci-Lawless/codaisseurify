@@ -3,5 +3,7 @@ class Artist < ApplicationRecord
 
   validates :name, presence: true
   validates :genre, presence: true
+  mount_uploader :image_url, ImageUploader
+  # skip_callback :commit, :after, :remove_previously_stored_avatar
 
 end

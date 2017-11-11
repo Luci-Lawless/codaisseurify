@@ -12,11 +12,14 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
-    # @song = new_artist.songs.build
   end
 
   def create
     @artist = Artist.new(artist_params)
+      if !params[:image].nil?
+        @artist.image_url = params[:image]
+      end
+
       if @artist.save
         redirect_to artists_path, notice: "Artist created!"
       else
@@ -46,10 +49,6 @@ class ArtistsController < ApplicationController
     def artist_params
       params
       .require(:artist)
-      .permit(:name, :genre, :image_url)
+      .permit(:name, :genre)
     end
-
-    # def song_params
-    #   params[:song_title].present? ? params.require(:song_title) : []
-    # end
 end

@@ -6,31 +6,31 @@ Song.destroy_all
 artist1 = Artist.create!(
   name: "Napalm Death",
   genre: "Grindcore",
-  image_url: "remote url goes here"
+  image_url: "http://res.cloudinary.com/di7m4tijz/image/upload/v1510432704/napalm_vfiode.jpg"
 )
 
 artist2 = Artist.create!(
   name: "Brujeria",
   genre: "Death Metal/Grindcore",
-  image_url: "remote url goes here"
+  image_url: "http://res.cloudinary.com/di7m4tijz/image/upload/v1510432704/brujeria_cxt85m.jpg"
 )
 
 artist3 = Artist.create!(
   name: "Darkthrone",
   genre: "Black Metal",
-  image_url: "remote url goes here"
+  image_url: "http://res.cloudinary.com/di7m4tijz/image/upload/v1510432704/darkthrone_fnqlzf.jpg"
 )
 
 artist4 = Artist.create!(
   name: "Exodus",
   genre: "Thrash Metal",
-  image_url: "remote url goes here"
+  image_url: "http://res.cloudinary.com/di7m4tijz/image/upload/v1510432705/exodus_kv1nku.jpg"
 )
 
 artist5 = Artist.create!(
   name: "Cannibal Corpse",
   genre: "Death Metal",
-  image_url: "remote url goes here"
+  image_url: "http://res.cloudinary.com/di7m4tijz/image/upload/v1510432707/cannibalcorpse_tjfrqd.jpg"
 )
 
 #Songs
