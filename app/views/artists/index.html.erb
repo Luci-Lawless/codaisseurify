@@ -1,12 +1,11 @@
-<div>
-  <% @artists.each do |artist| %>
-  <div>
-    <div>
-      <%= artist.image_url %>
-    </div>
-    <div>
-      <%= artist.name %>
+<% @artists.each do |artist| %>
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+        <%= artist.image_url %>
+        <h3><%= artist.name %></h3>
     </div>
   </div>
-  <%end%>
 </div>
+<%end%>
+<%= link_to "Add Artist", new_artist_path, class: "btn btn-primary" %>
