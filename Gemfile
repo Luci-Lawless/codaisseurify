@@ -62,3 +62,5 @@ gem 'jquery-rails', '~> 4.3.1'
 
 #Image Uploader
 gem 'carrierwave', '0.11.2'
+
+gem 'cloudinary', '1.2.3'
