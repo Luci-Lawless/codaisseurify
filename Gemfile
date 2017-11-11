@@ -59,3 +59,6 @@ gem 'bootstrap-sass', '~>3.3.6'
 
 #jQuery for easier JavaScript
 gem 'jquery-rails', '~> 4.3.1'
+
+#Image Uploader
+gem 'carrierwave', '0.11.2'
