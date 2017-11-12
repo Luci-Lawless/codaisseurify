@@ -1,25 +1,26 @@
-
-<div class="panel-heading">
-  <h1><%=@artist.name %></h1>
-</div>
-<div class ="panel-body">
-  <div class="thumbnail">
-      <%= image_tag @artist.image_url %>
-      <span class="label label-danger"><%= @artist.genre %></span>
-      <div>
-        <%= link_to "Delete Artist", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
-      </div>
+<div class="align-image">
+  <div class="panel-heading">
+    <h1><%=@artist.name %></h1>
   </div>
-<table>
-  <ol>
-    <% @songs.each do |song| %>
-      <li><%= song.song_title%></li>
-      <div>
-        <%= link_to "Delete", artist_song_path(@artist, song), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
-      </div>
-    <%end%>
-  </ol>
-<table>
-  <%= link_to "Add Song", new_artist_song_path(@artist), class: "btn btn-primary" %>
-  <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
+  <div class ="panel-body">
+    <div class="thumbnail">
+        <%= image_tag @artist.image_url %>
+        <span class="label label-danger"><%= @artist.genre %></span>
+        <div>
+          <%= link_to "Delete Artist", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+    </div>
+  <table>
+    <ol>
+      <% @songs.each do |song| %>
+        <li><%= song.song_title%></li>
+        <div>
+          <%= link_to "Delete", artist_song_path(@artist, song), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      <%end%>
+    </ol>
+  <table>
+    <%= link_to "Add Song", new_artist_song_path(@artist), class: "btn btn-primary" %>
+    <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
+  </div>
 </div>
