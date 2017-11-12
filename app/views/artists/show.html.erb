@@ -9,8 +9,10 @@
   </div>
   <ol>
     <% @songs.each do |song| %>
-      <li><%= song.song_title%></li>  
+      <li><%= song.song_title%></li>
     <%end%>
   </ol>
+
+  <%= link_to "Add Songs", new_artist_song_path(@artist), class: "btn btn-primary" %>
   <%= link_to "Back", artists_path, class: "btn btn-default" %>
 </div>
