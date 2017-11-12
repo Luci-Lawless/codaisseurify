@@ -16,8 +16,8 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-      if !params[:image].nil?
-        @artist.image_url = params[:image]
+      if params[:image] != nil?
+        @artist.image_url = params[:image_url]
       end
 
       if @artist.save
