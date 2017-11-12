@@ -1,12 +1,7 @@
 class SongsController < ApplicationController
-before_action :set_songs, only: [:show, :edit, :update, :destroy]
-
-  def show
-      @songs = @artist.songs
-  end
 
   def new
-    @song = @artist.songs.build(song_params)
+    @song = Song.new
   end
 
   private
@@ -15,6 +10,7 @@ before_action :set_songs, only: [:show, :edit, :update, :destroy]
     # end
     def song_params
       params
-      .permit(:song_title, :duration)
+      .require(:song)
+      .permit(:song_title, :duration, :artist_id)
     end
 end
