@@ -6,6 +6,9 @@
   <div class="thumbnail">
       <%= image_tag @artist.image_url %>
       <span class="label label-success"><%= @artist.genre %></span>
+      <div>
+        <%= link_to "Delete Artist", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
   </div>
 <table>
   <ol>
@@ -17,6 +20,6 @@
     <%end%>
   </ol>
 <table>
-  <%= link_to "Add Songs", new_artist_song_path(@artist), class: "btn btn-primary" %>
-  <%= link_to "Back", artists_path, class: "btn btn-default" %>
+  <%= link_to "Add Song", new_artist_song_path(@artist), class: "btn btn-primary" %>
+  <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
 </div>

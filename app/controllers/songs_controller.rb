@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-before_action :set_artist, only: [:new, :create]
+before_action :set_artist, only: [:new, :create, :destroy]
   def new
     @song = @artist.songs.build
   end
@@ -7,16 +7,16 @@ before_action :set_artist, only: [:new, :create]
   def create
     @song = @artist.songs.build(song_params)
     if @song.save
-      redirect_to artists_path, notice: "Song added!"
+      redirect_to artist_path(@artist), notice: "Song added!"
     else
       render :new
     end
   end
 
   def destroy
-     song = Song.find(params[:id])
-     song.destroy
-     redirect_to artists_path, notice: "Song deleted!"
+     @song = Song.find(params[:id])
+     @song.destroy
+     redirect_to artist_path(@artist), notice: "Song deleted!"
    end
 
   private
