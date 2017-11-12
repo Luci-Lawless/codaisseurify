@@ -1,18 +1,22 @@
 
 <div class="panel-heading">
-  <h1><%=@artist.name %>></h1>
+  <h1><%=@artist.name %></h1>
 </div>
 <div class ="panel-body">
   <div class="thumbnail">
       <%= image_tag @artist.image_url %>
       <span class="label label-success"><%= @artist.genre %></span>
   </div>
+<table>
   <ol>
     <% @songs.each do |song| %>
       <li><%= song.song_title%></li>
+      <div>
+        <%= link_to "Delete", artist_song_path(@artist, song), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
     <%end%>
   </ol>
-
+<table>
   <%= link_to "Add Songs", new_artist_song_path(@artist), class: "btn btn-primary" %>
   <%= link_to "Back", artists_path, class: "btn btn-default" %>
 </div>

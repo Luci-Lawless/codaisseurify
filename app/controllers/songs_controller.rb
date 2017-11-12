@@ -13,6 +13,12 @@ before_action :set_artist, only: [:new, :create]
     end
   end
 
+  def destroy
+     song = Song.find(params[:id])
+     song.destroy
+     redirect_to artists_path, notice: "Song deleted!"
+   end
+
   private
     def set_artist
       @artist = Artist.find(params[:artist_id])
