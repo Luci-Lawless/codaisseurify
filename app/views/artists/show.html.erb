@@ -1,0 +1,16 @@
+
+<div class="panel-heading">
+  <h1><%=@artist.name %>></h1>
+</div>
+<div class ="panel-body">
+  <div class="thumbnail">
+      <%= image_tag @artist.image_url %>
+      <span class="label label-success"><%= @artist.genre %></span>
+  </div>
+  <ol>
+    <% @songs.each do |song| %>
+      <li><%= song.song_title%></li>  
+    <%end%>
+  </ol>
+  <%= link_to "Back", artists_path, class: "btn btn-default" %>
+</div>
