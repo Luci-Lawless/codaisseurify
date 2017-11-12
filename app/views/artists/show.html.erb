@@ -5,7 +5,7 @@
 <div class ="panel-body">
   <div class="thumbnail">
       <%= image_tag @artist.image_url %>
-      <span class="label label-success"><%= @artist.genre %></span>
+      <span class="label label-danger"><%= @artist.genre %></span>
       <div>
         <%= link_to "Delete Artist", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
