@@ -39,7 +39,7 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
-    # @artist.destroy
+    @artist.destroy
     redirect_to artists_path, notice: "Artist deleted!"
   end
 

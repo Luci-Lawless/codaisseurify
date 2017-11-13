@@ -1,15 +1,4 @@
 <%= form_for @artist, html: { multipart: true } do |f| %>
-
-<!--Validation-->
-<!-- <% if @artist.errors.any? %>
-  <h3>Errors:</h3>
-    <ul>
-      <%@artist.errors.full.messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-<% end %> -->
-
   <div class="form-group">
     <label>Name:</label>
     <%= f.text_field :name, placeholder: "Artist name", class: "form-control" %>
