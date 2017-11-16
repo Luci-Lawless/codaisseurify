@@ -7,7 +7,7 @@ before_action :set_artist, only: [:new, :create, :destroy]
   def create
     @song = @artist.songs.build(song_params)
     if @song.save
-      redirect_to artists_path, notice: "Song added!"
+      redirect_to artist_path(@artist), notice: "Song added!"
     else
       render :new
     end
