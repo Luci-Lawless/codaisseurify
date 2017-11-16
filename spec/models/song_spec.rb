@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-require 'rails_helper'
-
-RSpec.describe Artist, type: :model do
+RSpec.describe Song, type: :model do
   describe "validations" do
     it "is invalid without a title" do
       song = Song.new(song_title: "")
@@ -16,4 +14,13 @@ RSpec.describe Artist, type: :model do
       expect(song.errors).to have_key(:duration)
     end
   end
+
+  describe "association with artist" do
+    artist = Artist.new()
+    it "belongs to an artist" do
+      song = artist.songs.build()
+      expect(song.artist).to eq(artist)
+    end
+  end
+
 end

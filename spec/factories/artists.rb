@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :artist do
-    name  { Faker::Name.name }
-    genre   { Faker::Name.genre }
-    image_url   { Faker::Lorem.image_url }
+    name         "Iron Maiden"
+    genre        "Heavy Metal"
+    image_url    "eddie"
   end
 end
