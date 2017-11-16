@@ -3,7 +3,7 @@
 <% if @artist.errors.any? %>
  <h3>Errors:</h3>
    <ul>
-     <%@artist.errors.full.messages.each do |message| %>
+     <%@artist.errors.full_messages.each do |message| %>
        <li><%= message %></li>
      <% end %>
    </ul>
