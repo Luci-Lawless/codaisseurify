@@ -1,9 +1,18 @@
 class Api::SongsController < ApplicationController
-before_action :set_artist, only: [:new, :create, :destroy]
+skip_before_action :verify_authenticity_token
+before_action :set_artist, only: [:index, :create, :destroy]
 
   def index
     render status: 200, json: {
-      songs: Song.all
+      songs: @artist.songs
+    }.to_json
+  end
+
+  def show
+    song = Song.find(params[:id])
+
+    render status: 200, json: {
+      song: song
     }.to_json
   end
 
