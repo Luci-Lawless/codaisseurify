@@ -17,16 +17,16 @@ before_action :set_artist, only: [:index, :create, :destroy]
   end
 
   def create
-    song = Song.new(song_params)
+    @song = @artist.songs.build(song_params)
 
-    if song.save
+    if @song.save
       render status: 201, json: {
         message: "Song successfully created",
-        song: song
+        song: @song
       }.to_json
     else
       render status: 422, json: {
-        errors: song.errors
+        errors: @song.errors
       }.to_json
     end
   end
