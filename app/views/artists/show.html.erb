@@ -19,8 +19,11 @@
         </div>
       <%end%>
     </ol>
-  <table>
-    <%= link_to "Add Song", new_artist_song_path(@artist), class: "btn btn-primary" %>
+  </table>
+  <div>
+    <%= link_to "Delete All Songs", artist_path(@artist, @songs), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+    <%= link_to "Add Song", new_artist_song_path(@artist), class: "btn btn-danger" %>
     <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
   </div>
 </div>

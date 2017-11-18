@@ -21,7 +21,7 @@
   <label>Upload Image:</label>
 
   <div class="form-group">
-    <span class="btn btn-default">
+    <span class="btn btn-danger">
       Upload Image
       <%= file_field_tag "image_url", type: :file %>
     </span>
@@ -30,7 +30,7 @@
   <hr>
 
   <div class="actions">
-    <%= f.submit "Save", class: "btn btn-success" %>
+    <%= f.submit "Save", class: "btn btn-danger" %>
     <%= link_to "Back", artists_path, class: "btn btn-default" %>
   </div>
 

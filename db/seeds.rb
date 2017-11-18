@@ -32,6 +32,11 @@ artist5 = Artist.create!(
   genre: "Death Metal",
   remote_image_url_url: "http://res.cloudinary.com/di7m4tijz/image/upload/v1510432707/cannibalcorpse_tjfrqd.jpg"
 )
+artist6 = Artist.create!(
+  name: "Dirty Rotten Imbecilles",
+  genre: "Thrash/Crossover",
+  remote_image_url_url: "http://res.cloudinary.com/di7m4tijz/image/upload/v1511045533/DRI_hbhq9r.jpg"
+)
 
 #Songs
 
@@ -160,6 +165,31 @@ songs = Song.create!([
   song_title: "Pit of Zombies",
   duration: "03:58",
   artist: artist5
+},
+{
+  song_title: "Beneath the Wheel",
+  duration: "05:36",
+  artist: artist6
+},
+{
+  song_title: "Acid Rain",
+  duration: "04:18",
+  artist: artist6
+},
+{
+  song_title: "Thrashard",
+  duration: "03:39",
+  artist: artist6
+},
+{
+  song_title: "Abduction",
+  duration: "04:03",
+  artist: artist6
+},
+{
+  song_title: "Don't Ask",
+  duration: "05:36",
+  artist: artist6
 }])
 
 # This file should contain all the record creation needed to seed the database with its default values.

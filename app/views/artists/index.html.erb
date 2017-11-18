@@ -1,13 +1,13 @@
 <div class="align-image">
-  <% @artists.each do |artist| %>
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-          <%= image_tag artist.image_url %>
-          <h3><%= link_to artist.name, artist_path(artist) %></h3>
-          <span class="label label-danger"><%= artist.genre %></span>
-      </div>
-    </div>
-  </div>
+  <div class="col">
+   <% @artists.each do |artist| %>
+     <div class="col-md-3">
+       <div class="thumbnail">
+           <%= image_tag artist.image_url %>
+           <h3><%= link_to artist.name, artist_path(artist) %></h3>
+           <span class="label label-danger"><%= artist.genre %></span>
+       </div>
+     </div>
+   </div>
   <%end%>
 </div>
