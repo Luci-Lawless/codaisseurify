@@ -23,6 +23,7 @@ before_action :set_artist, only: [:new, :create, :destroy]
     def set_artist
       @artist = Artist.find(params[:artist_id])
     end
+    
     def song_params
       params
       .require(:song)
