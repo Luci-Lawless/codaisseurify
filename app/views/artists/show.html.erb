@@ -14,8 +14,9 @@
     <% @songs.each do |song| %>
     <tr>
         <td><%= song.song_title%></td>
+        <td><%= song.duration%></td>
         <td>
-          <%= link_to "Delete", artist_song_path(@artist, song), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= button_tag "Delete", class: "btn btn-default", id: "deleteSongButton", onclick: 'deleteSong(' + song.artist.id.to_s + ', ' + song.id.to_s + ')' %>
         </td>
     </tr>
       <%end%>

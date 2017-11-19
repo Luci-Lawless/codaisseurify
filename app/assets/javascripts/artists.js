@@ -17,3 +17,20 @@ function addSong(artistId) {
         location.reload();
       });
 }
+
+// Delete Songs
+function deleteSong(artistId, songId) {
+  var confirmed = confirm('Are you sure?');
+
+  if (confirmed) {
+    $.ajax({
+      type: "DELETE",
+      url: '/api/artists/' + artistId + '/songs/' + songId,
+      contentType: "application/json",
+      dataType: "json"})
+
+    .done(function(data) {
+      location.reload();
+    });
+  }
+}
