@@ -22,7 +22,7 @@
       <%end%>
   </table>
   <div>
-    <%= link_to "Delete All Songs", artist_path(@artist, @songs), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= button_tag 'Delete All Songs', class: "btn btn-danger", id: "deleteAllSongsButton", onclick: 'deleteAllSongs(' + @artist.id.to_s + ')' %>
   </div>
   <div class="fsongoup">
     <label>Title:</label>

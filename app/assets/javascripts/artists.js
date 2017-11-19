@@ -34,3 +34,19 @@ function deleteSong(artistId, songId) {
     });
   }
 }
+
+function deleteAllSongs(artistId) {
+  var confirmed = confirm('Are you sure?')
+
+  if (confirmed) {
+  $.ajax({
+    type: "DELETE",
+    url: '/api/artists/' + artistId + '/songs/destroy_all',
+    contentType: "application/json",
+    dataType: "json"})
+
+  .done(function(data) {
+    location.reload();
+  });
+ }
+}

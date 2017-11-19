@@ -1,6 +1,6 @@
 class Api::SongsController < ApplicationController
 skip_before_action :verify_authenticity_token
-before_action :set_artist, only: [:index, :create, :destroy]
+before_action :set_artist, only: [:index, :create, :destroy, :destroy_all]
 
   def index
     render status: 200, json: {
