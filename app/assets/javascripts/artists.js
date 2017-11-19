@@ -1,3 +1,4 @@
+//Show-Hide Song List / Add Song Form
 $(document).ready(function(){
   $("#addSongForm").hide();
   $("#songList").show();
@@ -14,7 +15,6 @@ $(document).ready(function(){
   });
 
 });
-
 
 //Create Songs
 function addSong(artistId) {

@@ -6,7 +6,7 @@
     <div class="thumbnail">
         <%= image_tag @artist.image_url %>
         <span class="label label-danger"><%= @artist.genre %></span>
-        <div>
+        <div class="align-button">
           <%= link_to "Delete Artist", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
     </div>
@@ -17,16 +17,16 @@
           <td><%= song.song_title%></td>
           <td><%= song.duration%></td>
           <td>
-            <%= button_tag "Delete", class: "btn btn-default", id: "deleteSongButton", onclick: 'deleteSong(' + song.artist.id.to_s + ', ' + song.id.to_s + ')' %>
+            <%= button_tag "x", class: "btn btn-default", id: "deleteSongButton", onclick: 'deleteSong(' + song.artist.id.to_s + ', ' + song.id.to_s + ')' %>
           </td>
       </tr>
         <%end%>
     </table>
-    <td>
+    <div class="align-add-delete">
       <%= button_tag "Add Song", class: "btn btn-danger", id: "addSongButton" %>
-    </td>
-    <div>
+
       <%= button_tag 'Delete All Songs', class: "btn btn-danger", id: "deleteAllSongsButton", onclick: 'deleteAllSongs(' + @artist.id.to_s + ')' %>
+
     </div>
   </div>
   <div id="addSongForm" class="fsongoup">
@@ -38,13 +38,13 @@
       <input id="durationInput" type="text" class="form-control" placeholder="eg. 03:40">
     </div>
   <hr>
-    <div class="actions">
+    <div class="align-add-delete">
       <%= button_tag "Save Song", class: "btn btn-danger", id: "saveSongButton", onclick: 'addSong(' + @artist.id.to_s + ')' %>
-   </div>
-   <td>
+
      <%= button_tag "Cancel", class: "btn btn-default", id: "cancelAddSongButton" %>
-   </td>
+   </div>
   </div>
-  <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
+  <div class="align-button">
+    <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
   </div>
 </div>
