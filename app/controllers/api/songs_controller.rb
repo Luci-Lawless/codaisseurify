@@ -41,6 +41,14 @@ before_action :set_artist, only: [:index, :create, :destroy]
 
   end
 
+  def destroy_all
+    @artist.songs.destroy_all
+
+    render status: 200, json: {
+      message: "All songs successfully deleted"
+    }.to_json
+  end
+
   private
     def set_artist
       @artist = Artist.find(params[:artist_id])

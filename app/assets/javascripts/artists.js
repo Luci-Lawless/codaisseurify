@@ -1,19 +1,19 @@
-$(document).ready(function(){
-  listSongs(1);
-});
+//Create Songs
+function addSong(artistId) {
+  var titleValue = $("#titleInput").val();
+  var durationValue = $("#durationInput").val();
 
-function listSongs(artistId){
-  
-}
-
-function deleteSong(artistId, songId) {
   $.ajax({
-    type: "DELETE",
-    url: "api/artists/" + artistId + "/songs/" + songId + ".json",
-    contentType: "application/json",
-    dataType: "json"
-  })
-  .done(function(data) {
+      type: "POST",
+      url: '/api/artists/' + artistId + '/songs',
+      data: JSON.stringify({
+        song_title: titleValue,
+        duration: durationValue
+      }),
+      contentType: "application/json",
+      dataType: "json"})
 
-  });
+      .done(function(data) {
+        location.reload();
+      });
 }

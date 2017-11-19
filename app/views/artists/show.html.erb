@@ -10,20 +10,32 @@
           <%= link_to "Delete Artist", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
     </div>
-  <table>
-    <ol>
-      <% @songs.each do |song| %>
-        <li><%= song.song_title%></li>
-        <div>
+  <table id="songlist">
+    <% @songs.each do |song| %>
+    <tr>
+        <td><%= song.song_title%></td>
+        <td>
           <%= link_to "Delete", artist_song_path(@artist, song), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
-        </div>
+        </td>
+    </tr>
       <%end%>
-    </ol>
   </table>
   <div>
     <%= link_to "Delete All Songs", artist_path(@artist, @songs), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
-    <%= link_to "Add Song", new_artist_song_path(@artist), class: "btn btn-danger" %>
+  <div class="fsongoup">
+    <label>Title:</label>
+    <input id="titleInput" type="text" class="form-control" placeholder="Song title">
+
+    <div class="form-group">
+      <label>Duration:</label>
+      <input id="durationInput" type="text" class="form-control" placeholder="eg. 03:40">
+    </div>
+  <hr>
+    <div class="actions">
+      <%= button_tag "Save Song", class: "btn btn-danger", id: "saveSongButton", onclick: 'addSong(' + @artist.id.to_s + ')' %>
+   </div>
+  </div>
     <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
   </div>
 </div>
