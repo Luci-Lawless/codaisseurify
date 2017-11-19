@@ -10,21 +10,26 @@
           <%= link_to "Delete Artist", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
     </div>
-  <table id="songlist">
-    <% @songs.each do |song| %>
-    <tr>
-        <td><%= song.song_title%></td>
-        <td><%= song.duration%></td>
-        <td>
-          <%= button_tag "Delete", class: "btn btn-default", id: "deleteSongButton", onclick: 'deleteSong(' + song.artist.id.to_s + ', ' + song.id.to_s + ')' %>
-        </td>
-    </tr>
-      <%end%>
-  </table>
-  <div>
-    <%= button_tag 'Delete All Songs', class: "btn btn-danger", id: "deleteAllSongsButton", onclick: 'deleteAllSongs(' + @artist.id.to_s + ')' %>
+  <div id="songList">
+    <table>
+      <% @songs.each do |song| %>
+      <tr>
+          <td><%= song.song_title%></td>
+          <td><%= song.duration%></td>
+          <td>
+            <%= button_tag "Delete", class: "btn btn-default", id: "deleteSongButton", onclick: 'deleteSong(' + song.artist.id.to_s + ', ' + song.id.to_s + ')' %>
+          </td>
+      </tr>
+        <%end%>
+    </table>
+    <td>
+      <%= button_tag "Add Song", class: "btn btn-danger", id: "addSongButton" %>
+    </td>
+    <div>
+      <%= button_tag 'Delete All Songs', class: "btn btn-danger", id: "deleteAllSongsButton", onclick: 'deleteAllSongs(' + @artist.id.to_s + ')' %>
+    </div>
   </div>
-  <div class="fsongoup">
+  <div id="addSongForm" class="fsongoup">
     <label>Title:</label>
     <input id="titleInput" type="text" class="form-control" placeholder="Song title">
 
@@ -36,7 +41,10 @@
     <div class="actions">
       <%= button_tag "Save Song", class: "btn btn-danger", id: "saveSongButton", onclick: 'addSong(' + @artist.id.to_s + ')' %>
    </div>
+   <td>
+     <%= button_tag "Cancel", class: "btn btn-default", id: "cancelAddSongButton" %>
+   </td>
   </div>
-    <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
+  <%= link_to "Back to Artists", artists_path, class: "btn btn-default" %>
   </div>
 </div>

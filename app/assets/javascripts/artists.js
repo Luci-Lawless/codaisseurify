@@ -1,3 +1,21 @@
+$(document).ready(function(){
+  $("#addSongForm").hide();
+  $("#songList").show();
+
+
+  $("#addSongButton").click(function(){
+    $("#songList").hide();
+    $("#addSongForm").show();
+  });
+
+  $("#cancelAddSongButton").click(function(){
+    $("#songList").show();
+    $("#addSongForm").hide();
+  });
+
+});
+
+
 //Create Songs
 function addSong(artistId) {
   var titleValue = $("#titleInput").val();
