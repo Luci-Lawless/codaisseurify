@@ -10,17 +10,12 @@
           <%= link_to "Delete Artist", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
     </div>
-  <div id="songList">
-    <table>
-      <% @songs.each do |song| %>
+  <div>
+    <table id="songList" data-artistid="<%= @artist.id.to_s %>" >
       <tr>
-          <td><%= song.song_title%></td>
-          <td><%= song.duration%></td>
-          <td>
-            <%= button_tag "x", class: "btn btn-default", id: "deleteSongButton", onclick: 'deleteSong(' + song.artist.id.to_s + ', ' + song.id.to_s + ')' %>
-          </td>
+        <th>Title</th>
+        <th>Duration</th>
       </tr>
-        <%end%>
     </table>
     <div class="align-add-delete">
       <%= button_tag "Add Song", class: "btn btn-danger", id: "addSongButton" %>
